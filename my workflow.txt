@@ -1,0 +1,13 @@
+my workflow
+
+create a django project - done
+create a virtual env - done
+create a url endpoint to get data from hacker news - done
+create a python request to consume data - done
+create a model that will accept the hackernews data - done
+create a task that runs in 5 minutes - done
+create the detail page - done
+consume comments from hackernews - done
+build an api for get and post - done
+enable search functionality in details page - done
+enable filter functionality in the rest api framework - done

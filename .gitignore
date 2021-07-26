@@ -1,0 +1,10 @@
+*.log
+*.pot
+*.pyc
+quickcheck_venv
+/media
+db.sqlite3
+__pycache__/
+local_settings.py
+.vscode
+.env

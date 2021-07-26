@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Quickcheck Assignment</title>
+</head>
+<body>
+    <h1>Quickcheck Assignment</h1>
+    <nav>
+        <li class="nav-list"><a href="{% url 'index' %}" style="color: aliceblue;">Home</a></li>
+        <li class="nav-list"><a href="/news/api" style="color: aliceblue;">API</a></li>
+        <li class="nav-list">About us</li>
+    </nav>
+    <h2>Latest News</h2>
+    <section>
+        {% for latest_news in news %}
+        <div>
+            <li><a href="{% url 'news_detail' latest_news.id latest_news.hacker_id %}">{{latest_news.title}}</a></li><br>
+            <i>by <span class="author">{{latest_news.by}}</span> </i>
+        </div>
+        {% endfor %}
+    </section>
+    {% if news.has_other_pages %}
+    <ul class="pagination">
+        {% if news.has_previous %}
+        <li class="p-list"><a href="?page={{ news.previous_page_number }}">&laquo;</a></li>
+        {% else %}
+        <li class="disabled p-list"><span>&laquo;</span></li>
+        {% endif %}
+        {% for i in news.paginator.page_range %}
+        {% if news.number == i %}
+            <li class="active p-list"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+            <li class="p-list"><a href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if news.has_next %}
+        <li class="p-list"><a href="?page={{ news.next_page_number }}">&raquo;</a></li>
+        {% else %}
+        <li class="disabled p-list"><span>&raquo;</span></li>
+        {% endif %}
+    </ul>
+   {% endif %}
+</body>
+<script src="{% static 'js/app.js' %}"></script>
+</html>

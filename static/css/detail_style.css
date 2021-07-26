@@ -1,0 +1,39 @@
+body{
+    background-color: #F4F4F4;
+}
+h1{
+    text-align: center;
+    text-transform: capitalize;
+}
+hr{
+    border: 3px solid #007BFF;
+    width: 5%;
+    
+}
+.comment-input{
+    width: 40%;
+    padding: 10px 10px 10px 10px;
+    border: none;
+}
+.by-comment{
+    color: blue;
+}
+.comment_side{
+    margin:40px;
+}
+form{
+    width: 100%;
+    margin-left: 60%;
+    margin-bottom: 30px;
+}
+.text-input{
+    width: 30%;
+    padding: 15px 10px 15px 10px;
+    border: none;
+}
+.submit-input{
+    padding: 15px 10px 15px 10px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+}
